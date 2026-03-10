@@ -369,110 +369,157 @@
       <p class="section-sub">We connect your brand to Korean consumers and travel trade through creative, data-driven, and ROI-focused marketing strategies.</p>
     </div>
 
-    <!-- Intro strip -->
+    <!-- Intro strip (accordion) -->
     <div class="mkt-intro fade-in">
-      <div class="mkt-intro-text">
+      <button class="cst-approach-toggle" onclick="toggleMktIntro(this)" aria-expanded="true">
         <h3>Connecting Your Business to Korea</h3>
-        <p>We connect your business to people in Korea who are actively looking for a valuable brand in the tourism industry. As a trusted partner, we understand the importance of creativity — we analyse your market, identify opportunities, and execute with precision to make a lasting impact.</p>
-        <p>Our team has built strong networks with wholesalers, retail agents, airlines, travel media, TV stations, corporate MICE buyers, and consumer lifestyle brands — creating a powerful synergy effect for every campaign we run.</p>
-      </div>
-      <div class="mkt-intro-stats">
-        <div class="mis"><strong class="grad-text">Naver</strong><span>Korea's #1 Search Engine</span></div>
-        <div class="mis"><strong class="grad-text">Kakao</strong><span>50M+ Active Users</span></div>
-        <div class="mis"><strong class="grad-text">B2B</strong><span>Trade Network Access</span></div>
-        <div class="mis"><strong class="grad-text">PR</strong><span>Full Media Coverage</span></div>
+        <span class="cst-toggle-icon">▲</span>
+      </button>
+      <div id="mktIntroBody">
+        <div class="mkt-intro-inner">
+          <div class="mkt-intro-text">
+            <p>We connect your business to people in Korea who are actively looking for a valuable brand in the tourism industry. As a trusted partner, we understand the importance of creativity — we analyse your market, identify opportunities, and execute with precision to make a lasting impact.</p>
+            <p>Our team has built strong networks with wholesalers, retail agents, airlines, travel media, TV stations, corporate MICE buyers, and consumer lifestyle brands — creating a powerful synergy effect for every campaign we run.</p>
+          </div>
+          <div class="mkt-intro-stats">
+            <div class="mis"><strong class="grad-text">Naver</strong><span>Korea's #1 Search Engine</span></div>
+            <div class="mis"><strong class="grad-text">Kakao</strong><span>50M+ Active Users</span></div>
+            <div class="mis"><strong class="grad-text">B2B</strong><span>Trade Network Access</span></div>
+            <div class="mis"><strong class="grad-text">PR</strong><span>Full Media Coverage</span></div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Service cards -->
-    <div class="mkt-grid">
-      <div class="mkt-card fade-in">
-        <div class="mkt-icon">📣</div>
-        <h4>Public Relations</h4>
-        <p>Strong and wide media networks enabling reach to the right distribution channels and relevant travel media. Press releases, editorial placements, and journalist FAM trips — all managed in-house.</p>
-        <ul class="mkt-list">
-          <li>Travel trade & consumer media coverage</li>
-          <li>Press release writing & distribution</li>
-          <li>FAM trip coordination</li>
-          <li>Influencer & travel blogger campaigns</li>
-        </ul>
+    <!-- Service cards (expandable) -->
+    <div class="mkt-grid" id="mktCards">
+      <div class="mkt-card cst-card fade-in" onclick="toggleCard(this)">
+        <div class="cst-card-header">
+          <div class="mkt-icon">📣</div>
+          <h4>Public Relations</h4>
+          <span class="cst-card-arrow">﹀</span>
+        </div>
+        <div class="cst-card-body">
+          <p>Strong and wide media networks enabling reach to the right distribution channels and relevant travel media. Press releases, editorial placements, and journalist FAM trips — all managed in-house.</p>
+          <ul class="mkt-list">
+            <li>Travel trade & consumer media coverage</li>
+            <li>Press release writing & distribution</li>
+            <li>FAM trip coordination</li>
+            <li>Influencer & travel blogger campaigns</li>
+          </ul>
+        </div>
       </div>
-      <div class="mkt-card fade-in">
-        <div class="mkt-icon">🎯</div>
-        <h4>Search Engine Marketing (SEM)</h4>
-        <p>Pay-per-click advertising on Korea's most powerful digital platforms. We manage every aspect of your paid search from keyword research to ad copy and bid optimization.</p>
-        <ul class="mkt-list">
-          <li>Naver Search Ads (네이버 검색광고)</li>
-          <li>Kakao Keyword Ads (카카오 키워드광고)</li>
-          <li>Google Ads — Korea-optimized</li>
-          <li>Display & retargeting campaigns</li>
-        </ul>
+      <div class="mkt-card cst-card fade-in" onclick="toggleCard(this)">
+        <div class="cst-card-header">
+          <div class="mkt-icon">🎯</div>
+          <h4>Search Engine Marketing (SEM)</h4>
+          <span class="cst-card-arrow">﹀</span>
+        </div>
+        <div class="cst-card-body">
+          <p>Pay-per-click advertising on Korea's most powerful digital platforms. We manage every aspect of your paid search from keyword research to ad copy and bid optimization.</p>
+          <ul class="mkt-list">
+            <li>Naver Search Ads (네이버 검색광고)</li>
+            <li>Kakao Keyword Ads (카카오 키워드광고)</li>
+            <li>Google Ads — Korea-optimized</li>
+            <li>Display & retargeting campaigns</li>
+          </ul>
+        </div>
       </div>
-      <div class="mkt-card fade-in">
-        <div class="mkt-icon">🔍</div>
-        <h4>Search Engine Optimization (SEO)</h4>
-        <p>Whether it's Google, Naver, or any other Korean portal — we understand the algorithms and optimize your digital presence to drive consistent organic traffic from Korean searchers.</p>
-        <ul class="mkt-list">
-          <li>Naver Blog & Post SEO</li>
-          <li>Google Korea on-page optimization</li>
-          <li>Korean keyword research & mapping</li>
-          <li>Technical SEO & site audit</li>
-        </ul>
+      <div class="mkt-card cst-card fade-in" onclick="toggleCard(this)">
+        <div class="cst-card-header">
+          <div class="mkt-icon">🔍</div>
+          <h4>Search Engine Optimization (SEO)</h4>
+          <span class="cst-card-arrow">﹀</span>
+        </div>
+        <div class="cst-card-body">
+          <p>Whether it's Google, Naver, or any other Korean portal — we understand the algorithms and optimize your digital presence to drive consistent organic traffic from Korean searchers.</p>
+          <ul class="mkt-list">
+            <li>Naver Blog & Post SEO</li>
+            <li>Google Korea on-page optimization</li>
+            <li>Korean keyword research & mapping</li>
+            <li>Technical SEO & site audit</li>
+          </ul>
+        </div>
       </div>
-      <div class="mkt-card fade-in">
-        <div class="mkt-icon">📱</div>
-        <h4>Social Media Marketing (SNS)</h4>
-        <p>We develop and manage social media channels that build brand loyalty and drive engagement with the right Korean audience — across every major platform.</p>
-        <ul class="mkt-list">
-          <li>KakaoTalk Channel management</li>
-          <li>Instagram & YouTube Korea</li>
-          <li>Naver Blog & Naver TV</li>
-          <li>Community building & moderation</li>
-        </ul>
+      <div class="mkt-card cst-card fade-in" onclick="toggleCard(this)">
+        <div class="cst-card-header">
+          <div class="mkt-icon">📱</div>
+          <h4>Social Media Marketing (SNS)</h4>
+          <span class="cst-card-arrow">﹀</span>
+        </div>
+        <div class="cst-card-body">
+          <p>We develop and manage social media channels that build brand loyalty and drive engagement with the right Korean audience — across every major platform.</p>
+          <ul class="mkt-list">
+            <li>KakaoTalk Channel management</li>
+            <li>Instagram & YouTube Korea</li>
+            <li>Naver Blog & Naver TV</li>
+            <li>Community building & moderation</li>
+          </ul>
+        </div>
       </div>
-      <div class="mkt-card fade-in">
-        <div class="mkt-icon">✍️</div>
-        <h4>Content Marketing</h4>
-        <p>Korean consumers trust content. We create, translate, and localize compelling content — from blog posts and travel guides to video scripts and email newsletters.</p>
-        <ul class="mkt-list">
-          <li>Korean copywriting & translation</li>
-          <li>Travel guide & destination content</li>
-          <li>Email & newsletter campaigns</li>
-          <li>Naver Blog & KakaoStory posting</li>
-        </ul>
+      <div class="mkt-card cst-card fade-in" onclick="toggleCard(this)">
+        <div class="cst-card-header">
+          <div class="mkt-icon">✍️</div>
+          <h4>Content Marketing</h4>
+          <span class="cst-card-arrow">﹀</span>
+        </div>
+        <div class="cst-card-body">
+          <p>Korean consumers trust content. We create, translate, and localize compelling content — from blog posts and travel guides to video scripts and email newsletters.</p>
+          <ul class="mkt-list">
+            <li>Korean copywriting & translation</li>
+            <li>Travel guide & destination content</li>
+            <li>Email & newsletter campaigns</li>
+            <li>Naver Blog & KakaoStory posting</li>
+          </ul>
+        </div>
       </div>
-      <div class="mkt-card fade-in">
-        <div class="mkt-icon">💼</div>
-        <h4>Sales Representation</h4>
-        <p>Increase arrivals and length of stay by expanding your sales channels and pitching to the right targets — from top wholesalers and OTAs to corporate MICE buyers and retail agencies.</p>
-        <ul class="mkt-list">
-          <li>B2B travel trade sales calls</li>
-          <li>OTA channel negotiation</li>
-          <li>MICE & corporate sales</li>
-          <li>Trade shows & roadshows</li>
-        </ul>
+      <div class="mkt-card cst-card fade-in" onclick="toggleCard(this)">
+        <div class="cst-card-header">
+          <div class="mkt-icon">💼</div>
+          <h4>Sales Representation</h4>
+          <span class="cst-card-arrow">﹀</span>
+        </div>
+        <div class="cst-card-body">
+          <p>Increase arrivals and length of stay by expanding your sales channels and pitching to the right targets — from top wholesalers and OTAs to corporate MICE buyers and retail agencies.</p>
+          <ul class="mkt-list">
+            <li>B2B travel trade sales calls</li>
+            <li>OTA channel negotiation</li>
+            <li>MICE & corporate sales</li>
+            <li>Trade shows & roadshows</li>
+          </ul>
+        </div>
       </div>
-      <div class="mkt-card fade-in">
-        <div class="mkt-icon">🔗</div>
-        <h4>Integrated Marketing</h4>
-        <p>Creative omnichannel campaigns that activate the source market and deliver measurable ROI. We align digital, PR, trade, and content into a single strategy that moves your KPIs.</p>
-        <ul class="mkt-list">
-          <li>Campaign strategy & planning</li>
-          <li>Cross-channel execution</li>
-          <li>ROI tracking & reporting</li>
-          <li>Seasonal & promotional campaigns</li>
-        </ul>
+      <div class="mkt-card cst-card fade-in" onclick="toggleCard(this)">
+        <div class="cst-card-header">
+          <div class="mkt-icon">🔗</div>
+          <h4>Integrated Marketing</h4>
+          <span class="cst-card-arrow">﹀</span>
+        </div>
+        <div class="cst-card-body">
+          <p>Creative omnichannel campaigns that activate the source market and deliver measurable ROI. We align digital, PR, trade, and content into a single strategy that moves your KPIs.</p>
+          <ul class="mkt-list">
+            <li>Campaign strategy & planning</li>
+            <li>Cross-channel execution</li>
+            <li>ROI tracking & reporting</li>
+            <li>Seasonal & promotional campaigns</li>
+          </ul>
+        </div>
       </div>
-      <div class="mkt-card fade-in">
-        <div class="mkt-icon">🛡️</div>
-        <h4>Crisis Management</h4>
-        <p>Professional management of crisis situations with full understanding of Korea's media landscape and crisis communication protocols — protecting your brand reputation when it matters most.</p>
-        <ul class="mkt-list">
-          <li>Korean media monitoring</li>
-          <li>Crisis response planning</li>
-          <li>Spokesperson preparation</li>
-          <li>Damage control & recovery PR</li>
-        </ul>
+      <div class="mkt-card cst-card fade-in" onclick="toggleCard(this)">
+        <div class="cst-card-header">
+          <div class="mkt-icon">🛡️</div>
+          <h4>Crisis Management</h4>
+          <span class="cst-card-arrow">﹀</span>
+        </div>
+        <div class="cst-card-body">
+          <p>Professional management of crisis situations with full understanding of Korea's media landscape and crisis communication protocols — protecting your brand reputation when it matters most.</p>
+          <ul class="mkt-list">
+            <li>Korean media monitoring</li>
+            <li>Crisis response planning</li>
+            <li>Spokesperson preparation</li>
+            <li>Damage control & recovery PR</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

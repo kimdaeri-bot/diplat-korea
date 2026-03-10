@@ -35,6 +35,14 @@ function toggleApproach(btn) {
   steps.classList.toggle('collapsed', expanded);
 }
 
+// Marketing intro accordion
+function toggleMktIntro(btn) {
+  const body = document.getElementById('mktIntroBody');
+  const expanded = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', !expanded);
+  body.classList.toggle('collapsed', expanded);
+}
+
 // Consulting service card expand
 function toggleCard(card) {
   const isOpen = card.classList.contains('open');
