@@ -323,6 +323,25 @@ a.svc-card { display: block; text-decoration: none; color: inherit; cursor: poin
   color: var(--teal);
   font-weight: 700;
 }
+.mkt-card-highlight {
+  border-color: rgba(45,212,191,.3) !important;
+  background: rgba(45,212,191,.05) !important;
+  position: relative;
+}
+.mkt-card-highlight::after {
+  content: 'Core Service';
+  position: absolute;
+  top: 16px; right: 16px;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: rgba(45,212,191,.12);
+  border: 1px solid rgba(45,212,191,.25);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
 
 /* ===== INDUSTRY ===== */
 .industry { background: var(--bg-2); border-top: 1px solid var(--border); position: relative; overflow: hidden; }
