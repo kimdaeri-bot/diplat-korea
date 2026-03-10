@@ -220,6 +220,51 @@ ul { list-style: none; }
 .svc-card:hover .svc-link { opacity: 1; transform: translateX(0); }
 a.svc-card { display: block; text-decoration: none; color: inherit; cursor: pointer; }
 
+/* ===== EXPAND BUTTON ===== */
+.expand-btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0 0;
+}
+.expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: .85rem;
+  font-weight: 600;
+  font-family: inherit;
+  padding: 12px 28px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all .25s;
+}
+.expand-btn:hover { border-color: var(--teal); color: var(--teal); }
+.expand-btn.open { color: var(--teal); border-color: var(--teal); }
+.expand-btn.open span::before { content: '접기'; }
+.expand-btn.open span { font-size: 0; }
+.expand-btn.open span::before { font-size: .85rem; }
+.expand-arrow {
+  width: 18px; height: 18px;
+  transition: transform .35s;
+  flex-shrink: 0;
+}
+.expand-btn.open .expand-arrow { transform: rotate(180deg); }
+
+/* Grid expand animation */
+.expand-grid {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  transition: max-height .6s cubic-bezier(.4,0,.2,1), opacity .45s ease, margin-top .3s;
+  pointer-events: none;
+}
+.expand-grid.collapsed { max-height: 0; opacity: 0; margin-top: 0; pointer-events: none; }
+.expand-grid.open { max-height: 3000px; opacity: 1; margin-top: 24px; pointer-events: all; }
+
 /* ===== CONSULTING ===== */
 .consulting {
   background: var(--bg);

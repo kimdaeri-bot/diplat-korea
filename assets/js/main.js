@@ -27,6 +27,18 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+// 더보기 — expand entire card grid
+function toggleGrid(gridId, btnId) {
+  const grid = document.getElementById(gridId);
+  const btn = document.getElementById(btnId);
+  const isOpen = grid.classList.contains('open');
+  grid.classList.toggle('open', !isOpen);
+  grid.classList.toggle('collapsed', isOpen);
+  btn.classList.toggle('open', !isOpen);
+  // update label
+  btn.querySelector('span').textContent = isOpen ? '더보기' : '접기';
+}
+
 // Our Approach accordion
 function toggleApproach(btn) {
   const steps = document.getElementById('cstSteps');
