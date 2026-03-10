@@ -393,15 +393,11 @@ a.svc-card { display: block; text-decoration: none; color: inherit; cursor: poin
   color: var(--teal);
   font-weight: 700;
 }
-/* Expandable card */
-.cst-card { cursor: pointer; }
-.cst-card-header { display: flex; align-items: flex-start; gap: 10px; }
+/* Card — always expanded */
+.cst-card-header { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; }
 .cst-card-header .mkt-icon { flex-shrink: 0; }
 .cst-card-header h4 { flex: 1; margin-bottom: 0; }
-.cst-card-arrow { font-size: .85rem; color: var(--teal); margin-left: auto; flex-shrink: 0; transition: transform .3s; margin-top: 2px; }
-.cst-card.open .cst-card-arrow { transform: rotate(180deg); }
-.cst-card-body { overflow: hidden; max-height: 0; opacity: 0; transition: max-height .4s ease, opacity .3s ease, margin-top .3s; margin-top: 0; }
-.cst-card.open .cst-card-body { max-height: 400px; opacity: 1; margin-top: 14px; }
+.cst-card-body { }
 .cst-card-body p { margin-bottom: 10px; }
 
 .mkt-card-highlight {
