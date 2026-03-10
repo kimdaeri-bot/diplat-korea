@@ -216,6 +216,9 @@ ul { list-style: none; }
 .svc-card p { font-size: .84rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
 .svc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .svc-tags span { background: rgba(45,212,191,.1); border: 1px solid rgba(45,212,191,.2); color: var(--teal); font-size: .72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+.svc-link { margin-top: 18px; font-size: .8rem; font-weight: 700; color: var(--teal); opacity: 0; transform: translateX(-6px); transition: opacity .2s, transform .2s; }
+.svc-card:hover .svc-link { opacity: 1; transform: translateX(0); }
+a.svc-card { display: block; text-decoration: none; color: inherit; cursor: pointer; }
 
 /* ===== MARKETING ===== */
 .marketing {
