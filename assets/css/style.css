@@ -246,6 +246,26 @@ a.svc-card { display: block; text-decoration: none; color: inherit; cursor: poin
   z-index: 1;
 }
 .cst-approach h3 { font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+/* Approach toggle button */
+.cst-approach-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 0 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
+  text-align: left;
+}
+.cst-approach-toggle h3 { font-size: 1.15rem; font-weight: 800; color: #fff; margin: 0; }
+.cst-toggle-icon { color: var(--teal); font-size: 1rem; transition: transform .3s; }
+.cst-approach-toggle[aria-expanded="false"] .cst-toggle-icon { transform: rotate(180deg); }
+#cstSteps { overflow: hidden; transition: max-height .4s ease, opacity .3s ease; max-height: 600px; opacity: 1; }
+#cstSteps.collapsed { max-height: 0; opacity: 0; margin-bottom: 0; }
+
 .cst-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .cst-step { display: flex; flex-direction: column; gap: 12px; }
 .cst-step-num { font-size: .7rem; font-weight: 800; color: var(--teal); letter-spacing: 1px; }
@@ -323,6 +343,17 @@ a.svc-card { display: block; text-decoration: none; color: inherit; cursor: poin
   color: var(--teal);
   font-weight: 700;
 }
+/* Expandable card */
+.cst-card { cursor: pointer; }
+.cst-card-header { display: flex; align-items: flex-start; gap: 10px; }
+.cst-card-header .mkt-icon { flex-shrink: 0; }
+.cst-card-header h4 { flex: 1; margin-bottom: 0; }
+.cst-card-arrow { font-size: .85rem; color: var(--teal); margin-left: auto; flex-shrink: 0; transition: transform .3s; margin-top: 2px; }
+.cst-card.open .cst-card-arrow { transform: rotate(180deg); }
+.cst-card-body { overflow: hidden; max-height: 0; opacity: 0; transition: max-height .4s ease, opacity .3s ease, margin-top .3s; margin-top: 0; }
+.cst-card.open .cst-card-body { max-height: 400px; opacity: 1; margin-top: 14px; }
+.cst-card-body p { margin-bottom: 10px; }
+
 .mkt-card-highlight {
   border-color: rgba(45,212,191,.3) !important;
   background: rgba(45,212,191,.05) !important;

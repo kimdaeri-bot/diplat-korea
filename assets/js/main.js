@@ -27,6 +27,22 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+// Our Approach accordion
+function toggleApproach(btn) {
+  const steps = document.getElementById('cstSteps');
+  const expanded = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', !expanded);
+  steps.classList.toggle('collapsed', expanded);
+}
+
+// Consulting service card expand
+function toggleCard(card) {
+  const isOpen = card.classList.contains('open');
+  // close all others
+  document.querySelectorAll('#cstCards .cst-card.open').forEach(c => c.classList.remove('open'));
+  if (!isOpen) card.classList.add('open');
+}
+
 // Contact form
 function handleSubmit(e) {
   e.preventDefault();

@@ -168,10 +168,13 @@
       </div>
     </div>
 
-    <!-- Approach steps -->
+    <!-- Approach steps (accordion) -->
     <div class="cst-approach fade-in">
-      <h3>Our Approach</h3>
-      <div class="cst-steps">
+      <button class="cst-approach-toggle" onclick="toggleApproach(this)" aria-expanded="true">
+        <h3>Our Approach</h3>
+        <span class="cst-toggle-icon">▲</span>
+      </button>
+      <div class="cst-steps" id="cstSteps">
         <div class="cst-step">
           <div class="cst-step-num">01</div>
           <div class="cst-step-body">
@@ -203,108 +206,153 @@
       </div>
     </div>
 
-    <!-- Service scope cards -->
-    <div class="mkt-grid">
-      <div class="mkt-card fade-in">
-        <div class="mkt-icon">🗺️</div>
-        <h4>Market Entry Strategy</h4>
-        <p>Full go-to-market framework for new entrants — from brand positioning to first-sale roadmap. Tailored to your product category and target audience in Korea.</p>
-        <ul class="mkt-list">
-          <li>Positioning & brand architecture</li>
-          <li>Target segment definition</li>
-          <li>Channel prioritization</li>
-          <li>First-year revenue forecasting</li>
-        </ul>
+    <!-- Service scope cards (expandable) -->
+    <div class="mkt-grid" id="cstCards">
+      <div class="mkt-card cst-card fade-in mkt-card-highlight" onclick="toggleCard(this)">
+        <div class="cst-card-header">
+          <div class="mkt-icon">✈️</div>
+          <h4>GSA — General Sales Agent</h4>
+          <span class="cst-card-arrow">﹀</span>
+        </div>
+        <div class="cst-card-body">
+          <p>We act as your official General Sales Agent in Korea — operating as your local sales arm with full reservation support, ticketing, agency relations, and account management.</p>
+          <ul class="mkt-list">
+            <li>Official Korea GSA representation</li>
+            <li>Reservations & ticketing support</li>
+            <li>Travel agent contracting & education</li>
+            <li>Corporate & group account management</li>
+            <li>Trade event & roadshow representation</li>
+            <li>Monthly sales reporting to HQ</li>
+          </ul>
+        </div>
       </div>
-      <div class="mkt-card fade-in">
-        <div class="mkt-icon">🔎</div>
-        <h4>Competitive Intelligence</h4>
-        <p>Deep analysis of competitors' pricing, marketing, distribution, and customer positioning in Korea — so you know exactly where your brand fits.</p>
-        <ul class="mkt-list">
-          <li>Competitor price benchmarking</li>
-          <li>Distribution channel audit</li>
-          <li>Campaign creative analysis</li>
-          <li>Market share estimation</li>
-        </ul>
+      <div class="mkt-card cst-card fade-in" onclick="toggleCard(this)">
+        <div class="cst-card-header">
+          <div class="mkt-icon">🗺️</div>
+          <h4>Market Entry Strategy</h4>
+          <span class="cst-card-arrow">﹀</span>
+        </div>
+        <div class="cst-card-body">
+          <p>Full go-to-market framework for new entrants — from brand positioning to first-sale roadmap. Tailored to your product category and target audience in Korea.</p>
+          <ul class="mkt-list">
+            <li>Positioning & brand architecture</li>
+            <li>Target segment definition</li>
+            <li>Channel prioritization</li>
+            <li>First-year revenue forecasting</li>
+          </ul>
+        </div>
       </div>
-      <div class="mkt-card fade-in">
-        <div class="mkt-icon">📊</div>
-        <h4>Consumer Research</h4>
-        <p>Korean traveler segmentation, demand forecasting, and purchase behavior analysis — grounded in real data from Korea's travel ecosystem.</p>
-        <ul class="mkt-list">
-          <li>Traveler persona development</li>
-          <li>Seasonal demand mapping</li>
-          <li>Booking behavior analysis</li>
-          <li>Willingness-to-pay research</li>
-        </ul>
+      <div class="mkt-card cst-card fade-in" onclick="toggleCard(this)">
+        <div class="cst-card-header">
+          <div class="mkt-icon">🔎</div>
+          <h4>Competitive Intelligence</h4>
+          <span class="cst-card-arrow">﹀</span>
+        </div>
+        <div class="cst-card-body">
+          <p>Deep analysis of competitors' pricing, marketing, distribution, and customer positioning in Korea — so you know exactly where your brand fits.</p>
+          <ul class="mkt-list">
+            <li>Competitor price benchmarking</li>
+            <li>Distribution channel audit</li>
+            <li>Campaign creative analysis</li>
+            <li>Market share estimation</li>
+          </ul>
+        </div>
       </div>
-      <div class="mkt-card fade-in">
-        <div class="mkt-icon">💰</div>
-        <h4>Pricing Strategy</h4>
-        <p>Competitive pricing models, yield optimization guidance, and seasonal promotional calendar development built for the Korean consumer mindset.</p>
-        <ul class="mkt-list">
-          <li>Competitive price benchmarking</li>
-          <li>Early bird & last-minute tactics</li>
-          <li>Promotional discount structuring</li>
-          <li>Package pricing frameworks</li>
-        </ul>
+      <div class="mkt-card cst-card fade-in" onclick="toggleCard(this)">
+        <div class="cst-card-header">
+          <div class="mkt-icon">📊</div>
+          <h4>Consumer Research</h4>
+          <span class="cst-card-arrow">﹀</span>
+        </div>
+        <div class="cst-card-body">
+          <p>Korean traveler segmentation, demand forecasting, and purchase behavior analysis — grounded in real data from Korea's travel ecosystem.</p>
+          <ul class="mkt-list">
+            <li>Traveler persona development</li>
+            <li>Seasonal demand mapping</li>
+            <li>Booking behavior analysis</li>
+            <li>Willingness-to-pay research</li>
+          </ul>
+        </div>
       </div>
-      <div class="mkt-card fade-in">
-        <div class="mkt-icon">🤝</div>
-        <h4>Partner Identification</h4>
-        <p>Vetting and introduction to the right wholesalers, OTAs, retail agencies, and media partners for your specific product and budget tier.</p>
-        <ul class="mkt-list">
-          <li>OTA shortlisting & intro</li>
-          <li>Wholesale operator mapping</li>
-          <li>MICE & corporate targets</li>
-          <li>Media & PR partner referrals</li>
-        </ul>
+      <div class="mkt-card cst-card fade-in" onclick="toggleCard(this)">
+        <div class="cst-card-header">
+          <div class="mkt-icon">💰</div>
+          <h4>Pricing Strategy</h4>
+          <span class="cst-card-arrow">﹀</span>
+        </div>
+        <div class="cst-card-body">
+          <p>Competitive pricing models, yield optimization guidance, and seasonal promotional calendar development built for the Korean consumer mindset.</p>
+          <ul class="mkt-list">
+            <li>Competitive price benchmarking</li>
+            <li>Early bird & last-minute tactics</li>
+            <li>Promotional discount structuring</li>
+            <li>Package pricing frameworks</li>
+          </ul>
+        </div>
       </div>
-      <div class="mkt-card fade-in">
-        <div class="mkt-icon">📋</div>
-        <h4>Regulatory Advisory</h4>
-        <p>Guidance on Korea's tourism business registration, licensing, and compliance requirements — avoiding costly legal missteps from day one.</p>
-        <ul class="mkt-list">
-          <li>Tourism business licensing</li>
-          <li>Korean consumer law basics</li>
-          <li>Privacy policy compliance</li>
-          <li>Payment regulation guidance</li>
-        </ul>
+      <div class="mkt-card cst-card fade-in" onclick="toggleCard(this)">
+        <div class="cst-card-header">
+          <div class="mkt-icon">🤝</div>
+          <h4>Partner Identification</h4>
+          <span class="cst-card-arrow">﹀</span>
+        </div>
+        <div class="cst-card-body">
+          <p>Vetting and introduction to the right wholesalers, OTAs, retail agencies, and media partners for your specific product and budget tier.</p>
+          <ul class="mkt-list">
+            <li>OTA shortlisting & intro</li>
+            <li>Wholesale operator mapping</li>
+            <li>MICE & corporate targets</li>
+            <li>Media & PR partner referrals</li>
+          </ul>
+        </div>
       </div>
-      <div class="mkt-card fade-in">
-        <div class="mkt-icon">🏢</div>
-        <h4>Office & Rep Setup</h4>
-        <p>Support for establishing a local Korea presence — from virtual office setup to hiring local representatives and building your Korea team.</p>
-        <ul class="mkt-list">
-          <li>Virtual / physical office setup</li>
-          <li>Local rep hiring support</li>
-          <li>Entity registration advisory</li>
-          <li>Operational process design</li>
-        </ul>
+      <div class="mkt-card cst-card fade-in" onclick="toggleCard(this)">
+        <div class="cst-card-header">
+          <div class="mkt-icon">📋</div>
+          <h4>Regulatory Advisory</h4>
+          <span class="cst-card-arrow">﹀</span>
+        </div>
+        <div class="cst-card-body">
+          <p>Guidance on Korea's tourism business registration, licensing, and compliance requirements — avoiding costly legal missteps from day one.</p>
+          <ul class="mkt-list">
+            <li>Tourism business licensing</li>
+            <li>Korean consumer law basics</li>
+            <li>Privacy policy compliance</li>
+            <li>Payment regulation guidance</li>
+          </ul>
+        </div>
       </div>
-      <div class="mkt-card fade-in">
-        <div class="mkt-icon">📈</div>
-        <h4>Performance Consulting</h4>
-        <p>Ongoing strategic advisory for brands already in Korea — reviewing performance, adjusting strategy, and unlocking the next stage of growth.</p>
-        <ul class="mkt-list">
-          <li>Quarterly business reviews</li>
-          <li>KPI framework & dashboards</li>
-          <li>Strategy pivots & optimization</li>
-          <li>Expansion planning</li>
-        </ul>
+      <div class="mkt-card cst-card fade-in" onclick="toggleCard(this)">
+        <div class="cst-card-header">
+          <div class="mkt-icon">🏢</div>
+          <h4>Office & Rep Setup</h4>
+          <span class="cst-card-arrow">﹀</span>
+        </div>
+        <div class="cst-card-body">
+          <p>Support for establishing a local Korea presence — from virtual office setup to hiring local representatives and building your Korea team.</p>
+          <ul class="mkt-list">
+            <li>Virtual / physical office setup</li>
+            <li>Local rep hiring support</li>
+            <li>Entity registration advisory</li>
+            <li>Operational process design</li>
+          </ul>
+        </div>
       </div>
-      <div class="mkt-card fade-in mkt-card-highlight">
-        <div class="mkt-icon">✈️</div>
-        <h4>GSA — General Sales Agent</h4>
-        <p>We act as your official General Sales Agent in Korea — operating as your local sales arm with full reservation support, ticketing, agency relations, and account management.</p>
-        <ul class="mkt-list">
-          <li>Official Korea GSA representation</li>
-          <li>Reservations & ticketing support</li>
-          <li>Travel agent contracting & education</li>
-          <li>Corporate & group account management</li>
-          <li>Trade event & roadshow representation</li>
-          <li>Monthly sales reporting to HQ</li>
-        </ul>
+      <div class="mkt-card cst-card fade-in" onclick="toggleCard(this)">
+        <div class="cst-card-header">
+          <div class="mkt-icon">📈</div>
+          <h4>Performance Consulting</h4>
+          <span class="cst-card-arrow">﹀</span>
+        </div>
+        <div class="cst-card-body">
+          <p>Ongoing strategic advisory for brands already in Korea — reviewing performance, adjusting strategy, and unlocking the next stage of growth.</p>
+          <ul class="mkt-list">
+            <li>Quarterly business reviews</li>
+            <li>KPI framework & dashboards</li>
+            <li>Strategy pivots & optimization</li>
+            <li>Expansion planning</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
