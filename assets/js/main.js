@@ -36,7 +36,7 @@ function toggleGrid(gridId, btnId) {
   grid.classList.toggle('collapsed', isOpen);
   btn.classList.toggle('open', !isOpen);
   // update label
-  btn.querySelector('span').textContent = isOpen ? '더보기' : '접기';
+  btn.querySelector('span').textContent = isOpen ? 'Show More' : 'Show Less';
 }
 
 // Our Approach accordion

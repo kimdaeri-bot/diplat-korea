@@ -243,7 +243,7 @@ a.svc-card { display: block; text-decoration: none; color: inherit; cursor: poin
 }
 .expand-btn:hover { border-color: var(--teal); color: var(--teal); }
 .expand-btn.open { color: var(--teal); border-color: var(--teal); }
-.expand-btn.open span::before { content: '접기'; }
+.expand-btn.open span::before { content: 'Show Less'; }
 .expand-btn.open span { font-size: 0; }
 .expand-btn.open span::before { font-size: .85rem; }
 .expand-arrow {
