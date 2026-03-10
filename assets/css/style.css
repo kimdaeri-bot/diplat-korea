@@ -220,6 +220,38 @@ ul { list-style: none; }
 .svc-card:hover .svc-link { opacity: 1; transform: translateX(0); }
 a.svc-card { display: block; text-decoration: none; color: inherit; cursor: pointer; }
 
+/* ===== CONSULTING ===== */
+.consulting {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.cst-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+.cst-glow-1 { width: 500px; height: 400px; background: rgba(129,140,248,.07); top: 0; right: -80px; }
+.cst-glow-2 { width: 400px; height: 300px; background: rgba(45,212,191,.06); bottom: 0; left: -60px; }
+
+.cst-approach {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px 44px;
+  margin-bottom: 48px;
+  position: relative;
+  z-index: 1;
+}
+.cst-approach h3 { font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+.cst-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.cst-step { display: flex; flex-direction: column; gap: 12px; }
+.cst-step-num { font-size: .7rem; font-weight: 800; color: var(--teal); letter-spacing: 1px; }
+.cst-step-body h4 { font-size: .9rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.cst-step-body p { font-size: .82rem; color: var(--text-muted); line-height: 1.75; }
+
 /* ===== MARKETING ===== */
 .marketing {
   background: var(--bg-2);
@@ -401,6 +433,7 @@ a.svc-card { display: block; text-decoration: none; color: inherit; cursor: poin
   .about-wrap { grid-template-columns: 1fr; gap: 40px; }
   .mkt-grid { grid-template-columns: repeat(2, 1fr); }
   .mkt-intro { grid-template-columns: 1fr; gap: 32px; }
+  .cst-steps { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
   .nav-links { display: none; }
@@ -416,6 +449,8 @@ a.svc-card { display: block; text-decoration: none; color: inherit; cursor: poin
   .hamburger { display: flex; }
   .industry-grid { grid-template-columns: repeat(2, 1fr); }
   .mkt-grid { grid-template-columns: 1fr 1fr; }
+  .cst-steps { grid-template-columns: 1fr; }
+  .cst-approach { padding: 28px 20px; }
   .contact-wrap { grid-template-columns: 1fr; gap: 48px; }
   .footer-inner { grid-template-columns: 1fr; gap: 32px; }
   .form-row { grid-template-columns: 1fr; }
