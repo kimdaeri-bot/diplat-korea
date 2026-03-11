@@ -615,13 +615,16 @@
           <div class="cd"><span class="cd-l">Web</span><a href="https://www.diplat.co.kr" target="_blank">www.diplat.co.kr</a></div>
         </div>
       </div>
-      <form class="contact-form fade-in" onsubmit="handleSubmit(event)">
+      <form class="contact-form fade-in" action="https://formsubmit.co/info@diplat.co.kr" method="POST">
+        <input type="hidden" name="_subject" value="[Diplat Korea] New Inquiry from Website">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://www.diplat.co.kr?sent=1">
         <div class="form-row">
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Email Address" required>
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
         </div>
-        <input type="text" placeholder="Company Name">
-        <select onchange="this.classList.add('filled')">
+        <input type="text" name="company" placeholder="Company Name">
+        <select name="inquiry" onchange="this.classList.add('filled')">
           <option value="" disabled selected>Type of Inquiry</option>
           <option>Korea Market Entry Strategy</option>
           <option>IT Platform Development</option>
@@ -630,7 +633,7 @@
           <option>Cruise Partnership</option>
           <option>Other</option>
         </select>
-        <textarea rows="4" placeholder="Tell us about your project..."></textarea>
+        <textarea name="message" rows="4" placeholder="Tell us about your project..."></textarea>
         <button type="submit" class="btn-submit">Send Message →</button>
       </form>
     </div>
