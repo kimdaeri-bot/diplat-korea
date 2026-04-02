@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diplat Korea — Internal</title>
+  <!-- SEO 완전 차단 -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #0f0f1a; color: white; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+
+    /* 잠금 화면 */
+    #lockScreen { text-align: center; padding: 40px 20px; }
+    #lockScreen .logo { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; letter-spacing: 1px; }
+    #lockScreen .subtitle { color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 32px; }
+    #lockScreen .lock-icon { font-size: 3rem; margin-bottom: 24px; }
+    .input-wrap { position: relative; margin-bottom: 16px; }
+    #pwInput { width: 280px; padding: 14px 44px 14px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; color: white; font-size: 1rem; outline: none; text-align: center; letter-spacing: 2px; }
+    #pwInput:focus { border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.12); }
+    #pwInput::placeholder { letter-spacing: 0; color: rgba(255,255,255,0.35); }
+    #enterBtn { width: 280px; padding: 14px; background: white; color: #0f0f1a; font-weight: 700; font-size: 0.95rem; border: none; border-radius: 10px; cursor: pointer; transition: opacity .2s; }
+    #enterBtn:hover { opacity: 0.85; }
+    #errMsg { color: #ff6b6b; font-size: 0.85rem; margin-top: 10px; min-height: 20px; }
+
+    /* 문서 목록 화면 */
+    #docScreen { display: none; width: 100%; max-width: 720px; padding: 40px 20px; }
+    .doc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
+    .doc-header h1 { font-size: 1.4rem; font-weight: 700; }
+    #logoutBtn { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+    .doc-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px 24px; margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: white; transition: background .2s; gap: 12px; }
+    .doc-card:hover { background: rgba(255,255,255,0.1); }
+    .doc-info { flex: 1; }
+    .doc-title { font-weight: 600; font-size: 1rem; margin-bottom: 4px; }
+    .doc-meta { color: rgba(255,255,255,0.5); font-size: 0.82rem; }
+    .doc-arrow { color: rgba(255,255,255,0.4); font-size: 1.2rem; }
+    .empty { text-align: center; color: rgba(255,255,255,0.4); padding: 40px; font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+
+<!-- 잠금 화면 -->
+<div id="lockScreen">
+  <div class="lock-icon">🔒</div>
+  <div class="logo">DIPLAT KOREA</div>
+  <div class="subtitle">Internal Documents</div>
+  <div class="input-wrap">
+    <input type="password" id="pwInput" placeholder="Enter password" onkeydown="if(event.key==='Enter')checkPw()">
+  </div>
+  <button id="enterBtn" onclick="checkPw()">Enter</button>
+  <div id="errMsg"></div>
+</div>
+
+<!-- 문서 목록 화면 -->
+<div id="docScreen">
+  <div class="doc-header">
+    <h1>📁 Internal Documents</h1>
+    <button id="logoutBtn" onclick="logout()">Lock</button>
+  </div>
+  <div id="docList"></div>
+</div>
+
+<script>
+  // ── 비밀번호 설정 (변경 가능) ──
+  const PASSWORD = 'Liuqiu';
+
+  // ── 문서 목록 (추가 시 여기에 추가) ──
+  const DOCS = [
+    {
+      title: 'Korean Digital Marketing Proposal',
+      desc: 'Naver Blog · Instagram · Social Media Strategy',
+      date: 'April 2026',
+      url: 'https://kimdaeri-bot.github.io/private-docs/marketing-proposal-snorkeling.html'
+    },
+  ];
+
+  const SESSION_KEY = 'diplat_internal_auth';
+
+  function checkPw() {
+    const val = document.getElementById('pwInput').value;
+    if (val === PASSWORD) {
+      sessionStorage.setItem(SESSION_KEY, '1');
+      showDocs();
+    } else {
+      document.getElementById('errMsg').textContent = 'Incorrect password. Please try again.';
+      document.getElementById('pwInput').value = '';
+      document.getElementById('pwInput').focus();
+    }
+  }
+
+  function showDocs() {
+    document.getElementById('lockScreen').style.display = 'none';
+    document.getElementById('docScreen').style.display = 'block';
+    const list = document.getElementById('docList');
+    if (DOCS.length === 0) {
+      list.innerHTML = '<div class="empty">No documents available.</div>';
+      return;
+    }
+    list.innerHTML = DOCS.map(doc => `
+      <a class="doc-card" href="${doc.url}" target="_blank">
+        <div class="doc-info">
+          <div class="doc-title">${doc.title}</div>
+          <div class="doc-meta">${doc.desc} · ${doc.date}</div>
+        </div>
+        <div class="doc-arrow">→</div>
+      </a>
+    `).join('');
+  }
+
+  function logout() {
+    sessionStorage.removeItem(SESSION_KEY);
+    document.getElementById('lockScreen').style.display = 'flex';
+    document.getElementById('docScreen').style.display = 'none';
+    document.getElementById('pwInput').value = '';
+    document.getElementById('errMsg').textContent = '';
+  }
+
+  // 세션 유지
+  if (sessionStorage.getItem(SESSION_KEY) === '1') showDocs();
+</script>
+
+</body>
+</html>
